@@ -28,11 +28,11 @@ const NewsCard = ({ articles, activeArticle }) => {
     return (
       <div
         id={articles.url}
-        className="flex container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 items-stretch"
+        className="flex container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 justify-evenly items-center"
         style={{ width: "100%" }}
       >
         {infoCards.map((infoCard, k) => (
-          <div key={k} className="my-6 mx-3">
+          <div key={k} className="my-6 mx-auto md:mx-3 w-full md:w-auto">
             <div
               className="flex flex-col items-center justify-between w-full p-10 h-[55vh] rounded-[20px] text-white"
               style={{ backgroundColor: infoCard.color }}
@@ -63,7 +63,7 @@ const NewsCard = ({ articles, activeArticle }) => {
   }
   return (
     <div
-      className="container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 items-stretch"
+      className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 items-stretch"
       style={{ padding: "0 5%", width: "100%", margin: "0" }}
     >
       {articles.map((article, i) => (

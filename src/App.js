@@ -34,9 +34,9 @@ const App = () => {
   }, []);
   return (
     <div>
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <img
-          className="h-40 w-4/12 object-cover rounded-md mt-8"
+          className="h-40 w-full md:w-4/12 object-cover rounded-md mt-8"
           src="https://assets-global.website-files.com/64ec3fc5bb945b48c0a37b1c/64f5aad0cbdbf0b7d248f4aa_alan%20ai_1.webp"
           alt="alan logo"
         />
