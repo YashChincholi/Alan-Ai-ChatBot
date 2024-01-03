@@ -17,7 +17,7 @@ const NewsCards = ({
 }) => {
   const condition = activeArticle === i;
   const myClass = classNames(
-    "container mx-auto bg-white rounded-xl shadow-md overflow-hidden m-5",
+    "max-w-xs h-full bg-yellow-200 rounded-lg overflow-hidden shadow-md",
     {
       "border-b-10 border-neon-blue": condition,
     }
@@ -38,8 +38,13 @@ const NewsCards = ({
   }, [i, activeArticle, elRefs]);
 
   return (
-    <div ref={elRefs[i]} className={myClass}>
-      <a href="/" className="block">
+    <div ref={elRefs[i]} className={`${myClass} flex flex-col h-full`}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="block flex-grow"
+      >
         <div className="flex-shrink-0">
           <img
             className="h-48 w-full object-cover"
@@ -47,20 +52,20 @@ const NewsCards = ({
             alt="news"
           />
         </div>
-        <div className="p-6">
-          <div className="text-gray-500 text-sm">
+        <div className="p-6 flex flex-col justify-between flex-grow">
+          <div className="text-gray-500 text-sm flex-grow">
             <h2 className="font-bold">
               {new Date(publishedAt).toDateString()}
             </h2>
             <p>{source.name}</p>
           </div>
-          <h5 className="mt-2 font-semibold text-lg leading-tight truncate">
+          <h5 className="mt-2 font-semibold text-lg leading-tight truncate flex-grow">
             {title}
           </h5>
-          <div className="mt-2 text-gray-500">
+          <div className="mt-2 text-gray-500 flex-grow">
             <p>{description}</p>
           </div>
-          <div className="flex justify-between mt-6">
+          <div className="flex justify-between items-center mt-6">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Read More
             </button>

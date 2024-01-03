@@ -62,13 +62,12 @@ const NewsCard = ({ articles, activeArticle }) => {
     );
   }
   return (
-    <div
-      className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 items-stretch"
-      style={{ padding: "0 5%", width: "100%", margin: "0" }}
-    >
+    <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {articles.map((article, i) => (
-        <div key={i} className="p-4" style={{ display: "flex" }}>
-          <NewsCards article={article} i={i} activeArticle={activeArticle} />
+        <div key={i} className="p-4 flex items-center justify-center">
+          <div className="max-w-xs h-full bg-white rounded-lg overflow-hidden shadow-md">
+            <NewsCards article={article} i={i} activeArticle={activeArticle} />
+          </div>
         </div>
       ))}
     </div>
